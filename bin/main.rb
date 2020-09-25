@@ -20,3 +20,12 @@ player2 = gets.chomp
 puts 'Pleas choose a number between 1-9'
 
 board = ['', '', '', '', '', '', '', '', '']
+
+def display_board(board)
+  %(#{borad[0]} | #{borad[1]} | #{borad[2]}
+----------------
+#{borad[3]} | #{borad[4]} | #{borad[5]} 
+----------------
+#{borad[6]} | #{borad[7]} | #{borad[8]}
+  )
+end
