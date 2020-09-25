@@ -4,5 +4,6 @@ puts "Hello, World!"
 
 puts "WELCOME TO THIS TIC-TAC-TOE GAME"
 puts "Press 'ENTER' to begin"
+puts "Press 'ESC' to exit"
 
-gets
+ESC = gets.chomp
