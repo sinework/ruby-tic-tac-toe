@@ -36,4 +36,27 @@ class Tictactoe
     @board[idx] = 'X'
   end
 
+  def input_to_index(user_input)
+    user_input.to_i - 1
+  end
+
+  def turn
+    @current_player = @current_player == @name[0] ? @name[1] : @name[0]
+    puts "#{@current_player}, choose a spot between 1-9"
+    spot = gets.strip.to_i
+    until spot.positive?
+      puts 'Please enter a valid move'
+      spot = gets.strip.to_i
+    end
+    display_board
+  end
+
+  def turn_count
+    taken = 0
+    @board.each do |i|
+      taken += 1 unless i.nil?
+    end
+    taken
+  end
+
   
