@@ -59,4 +59,23 @@ class Tictactoe
     taken
   end
 
+  def user_name
+      2.times do |i|
+        puts "Please enter name of player #{i + 1}:"
+        @name << gets.strip
+      end
+  end
+end
+
+board = Tictactoe.new
+board.welcome
+board.display_board
+board.user_name
+3.times do |i|
+  board.turn
+  board.move_board(i)
+  board.display_board
+end
+
+puts 'Congratulations you WON!!!'
   
