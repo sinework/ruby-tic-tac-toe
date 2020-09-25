@@ -29,3 +29,13 @@ def display_board(board)
 #{borad[6]} | #{borad[7]} | #{borad[8]}
   )
 end
+player1=gets.chomp
+ puts "Amine chose #{player1}"
+ puts 'Pleas choose a number between 1-9'
+ player2=gets.chomp
+ puts "Sine chose #{player2}"
+
+ #until a winning combination is reached or the game is a draw the code will be excuted
+puts "This was a draw. Do you want to play again?"
+response = gets.chomp
+puts "The game has ended!" 
