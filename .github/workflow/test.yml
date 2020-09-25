@@ -1,0 +1,19 @@
+name : Tests
+
+on: pull_request
+
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-18.04
+    steps:
+      -uses: action.checkout@v2
+      -uses: action/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - name: Setup RSpec
+        run: |
+          [ -f Gemfile ] && bundle --deployement
+          gem install --no-docuement rspec:'~>3.0'
+      - name: RSpec Report
+        run: rspec --force-color  --format documentation
