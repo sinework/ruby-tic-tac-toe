@@ -23,7 +23,7 @@ def welcome_screen(game,board)
   end
   game.player2.name = name
   puts "Hi #{game.player2.name} , your key is #{game.player2.key}"
-display_board(board,game)
+display_board(board)
 end
 
 # displaying the game board
@@ -33,13 +33,18 @@ def display_board(board)
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  get_turns(board,game)
+  
 end  
-def get_turns(board,game)
-  puts "#{game.player1.name}, make your move!"
+def get_turns(p)
+  
+  puts "#{p}, make your move!"
+  return gets.chomp.to_i-1
+ 
 end  
 # Validating the user name
 def validate_name(name)
   return true unless name == '' || name == ' '
 end
+
 welcome_screen(game, board)
+game.start_game

@@ -18,5 +18,18 @@ class Game
     @game_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
+def start_game
+    i=0
+    player_counter=0
+    while(i<9)
+   
+user_in= player_counter%2==0? get_turns(@player1):get_turns(@player2)
+puts user_in
+
+i+=1
+player_counter += 1
+  end 
   
+end
+
 end
