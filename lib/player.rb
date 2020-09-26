@@ -1,12 +1,9 @@
-# frozen_string_literal: true
+#!/usr/bin/env ruby
+require 'pry'
+require_relative '../bin/user-interface.rb'
+game = TicTacToe.new
+game.welcome
+game.display_board
+game.user_name
 
-
-module Player
-  def position_taken?(board, index)
-    !(board[index].nil? || board[index] == ' ')
-  end
-
-  def valid_move?(board, index)
-    index.between?(0, 8) && !position_taken?(board, index)
-  end
-end
+game.play
