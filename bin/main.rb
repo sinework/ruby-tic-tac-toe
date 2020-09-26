@@ -6,8 +6,8 @@ game = Game.new
 
 board = game.game_arr
 
-def welcome_screen(game,board)
-  name=""
+def welcome_screen(game, board)
+  name = ''
   puts 'Welcome to TIC-TAC-TOE'
   loop do
     puts "First player, What's your name?"
@@ -23,24 +23,43 @@ def welcome_screen(game,board)
   end
   game.player2.name = name
   puts "Hi #{game.player2.name} , your key is #{game.player2.key}"
-display_board(board)
+  display_board(board)
 end
 
 # displaying the game board
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
+  puts '-----------'
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
+  puts '-----------'
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  
-end  
-def get_turns(p)
-  
+end
+
+# Ask for input
+def ask_input(p)
   puts "#{p}, make your move!"
-  return gets.chomp.to_i-1
- 
-end  
+end
+
+def get_turns
+  gets.chomp.to_i - 1
+end
+
+# validate move
+def validate_move(mv, game_board)
+  if !mv.between?(0, 8) || !game_board[mv].is_a?(Integer)
+    
+    return false
+  else
+    Gem.win_platform? ? (system "cls") : (system "clear")
+    return true
+  end
+end
+
+# invalid position
+def position_error
+  puts "please enter valid position"
+end
+
 # Validating the user name
 def validate_name(name)
   return true unless name == '' || name == ' '

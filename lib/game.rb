@@ -21,15 +21,43 @@ class Game
 def start_game
     i=0
     player_counter=0
-    while(i<9)
-   
-user_in= player_counter%2==0? get_turns(@player1):get_turns(@player2)
-puts user_in
+while(i<9)
 
-i+=1
-player_counter += 1
-  end 
-  
+ valid_pos=false
+ input_req=player_counter%2==0 ? @player1.name : @player2.name
+ ask_input(input_req)
+while !valid_pos   
+user_in= get_turns()
+puts user_in
+if validate_move(user_in,@game_arr)
+
+ if player_counter%2==0
+   @player1.choice_array.push(user_in)
+   @game_arr[user_in]=@player1.key
+ else
+  @player2.choice_array.push(user_in)
+  @game_arr[user_in]=@player2.key
+ end
+
+valid_pos=true
+else
+  position_error
 end
 
+end
+display_board(@game_arr)
+i+=1
+player_counter += 1
+end 
+  
+end
+# Check if its a winning move
+
+def check_win(player_counter)
+if player_counter%2==0
+  @player1.choice_array
+end
+end  
+
+# End of class
 end
