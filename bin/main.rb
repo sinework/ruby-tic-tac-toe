@@ -36,34 +36,38 @@ def display_board(board)
 end
 
 # Ask for input
-def ask_input(p)
-  puts "#{p}, make your move!"
+def ask_input(plyr)
+  puts "#{plyr}, make your move!"
 end
 
-def get_turns
+def recieve_turns
   gets.chomp.to_i - 1
 end
 
 # validate move
-def validate_move(mv, game_board)
-  if !mv.between?(0, 8) || !game_board[mv].is_a?(Integer)
-    
-    return false
+def validate_move(mov, game_board)
+  if !mov.between?(0, 8) || !game_board[mov].is_a?(Integer)
+
+    false
   else
-    Gem.win_platform? ? (system "cls") : (system "clear")
-    return true
+    Gem.win_platform? ? (system 'cls') : (system 'clear')
+    true
   end
 end
 
 # invalid position
 def position_error
-  puts "please enter valid position"
+  puts 'please enter valid position'
 end
 
 # Validating the user name
 def validate_name(name)
-  return true unless name == '' || name == ' '
+  return true unless ['', ' '].include?(name)
 end
 
+# Annouce winner
+def announce_winner(name)
+  puts "Congrats #{name}, you have won!"
+end
 welcome_screen(game, board)
 game.start_game
