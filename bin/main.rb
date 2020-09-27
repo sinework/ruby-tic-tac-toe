@@ -15,14 +15,14 @@ def welcome_screen(game, board)
     break if validate_name(name)
   end
   game.player1.name = name
-  puts "Hi #{game.player1.name} , your key is #{game.player1.key}"
+  puts "Hi #{game.player1.name} , your key is #{game.player1.key} "
   loop do
     puts "Second player, What's your name?"
     name = gets.chomp
     break if validate_name(name)
   end
   game.player2.name = name
-  puts "Hi #{game.player2.name} , your key is #{game.player2.key}"
+  puts "Hi #{game.player2.name} , your key is #{game.player2.key} "
   display_board(board)
 end
 
@@ -67,7 +67,13 @@ end
 
 # Annouce winner
 def announce_winner(name)
-  puts "Congrats #{name}, you have won!"
+  Gem.win_platform? ? (system 'cls') : (system 'clear')
+  puts "Congrats #{name}, you have won! "
+end
+
+def draw
+  Gem.win_platform? ? (system 'cls') : (system 'clear')
+  puts 'It is a draw!'
 end
 welcome_screen(game, board)
 game.start_game

@@ -4,23 +4,14 @@ require_relative '../lib/player'
 
 class Game
   WINNING_SET = [
-
     [1, 2, 3],
-
     [4, 5, 6],
-
     [7, 8, 9],
-
     [1, 4, 7],
-
     [2, 5, 8],
-
     [3, 6, 9],
-
     [1, 5, 9],
-
     [3, 5, 7]
-
   ].freeze
 
   attr_accessor :player1, :player2, :game_arr
@@ -48,7 +39,7 @@ class Game
 
       ask_input(input_req)
 
-      until valid_pos
+      until valid_pos == true
 
         user_in = recieve_turns
 
@@ -58,7 +49,7 @@ class Game
 
           if player_counter.even?
 
-            @player1.choice_array.push(user_in)
+            @player1.choice_array.push(user_in + 1)
 
             @game_arr[user_in] = @player1.key
 
@@ -72,7 +63,7 @@ class Game
 
           else
 
-            @player2.choice_array.push(user_in)
+            @player2.choice_array.push(user_in + 1)
 
             @game_arr[user_in] = @player2.key
 
@@ -103,12 +94,13 @@ class Game
       player_counter += 1
 
     end
+    draw unless win == true
   end
 
   # Check if its a winning move
 
   def check_win?(win_set, player_arr)
-    arr1.length.times do |item|
+    win_set.length.times do |item|
       return true if win_set[item].all? { |x| player_arr.include?(x) }
     end
 
