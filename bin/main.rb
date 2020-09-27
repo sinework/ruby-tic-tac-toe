@@ -20,7 +20,7 @@ def welcome_screen(game, board)
 
     unless validate_name(name)
 
-      puts "Your name cannot be an empty line or a number \n \n"
+      puts "Your name cannot be an empty line or a number \n \n \n"
 
       puts "Please enter a valid name \n"
 
