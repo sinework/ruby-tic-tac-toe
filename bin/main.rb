@@ -62,7 +62,7 @@ end
 
 # Validating the user name
 def validate_name(name)
-  return true unless ['', ' '].include?(name)
+  return true unless ['', ' '].include?(name) && name[0].is_a?(String)
 end
 
 # Annouce winner

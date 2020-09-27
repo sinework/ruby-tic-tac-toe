@@ -43,7 +43,6 @@ class Game
 
         user_in = recieve_turns
 
-        puts user_in
 
         if validate_move(user_in, @game_arr)
 
