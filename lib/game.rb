@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require_relative '../lib/player'
 
 class Game
@@ -42,7 +40,6 @@ class Game
       until valid_pos == true
 
         user_in = recieve_turns
-
 
         if validate_move(user_in, @game_arr)
 
