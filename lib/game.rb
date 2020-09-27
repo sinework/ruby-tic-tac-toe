@@ -12,7 +12,7 @@ class Game
     [3, 5, 7]
   ].freeze
 
-  attr_accessor :player1, :player2, :game_arr
+  attr_reader :player1, :player2, :game_arr
 
   def initialize
     @player1 = Player.new('', 'X')
@@ -101,6 +101,34 @@ class Game
     end
 
     false
+  end
+  # validate move
+
+  def validate_move(mov, game_board)
+    if !mov.between?(0, 8) || !game_board[mov].is_a?(Integer)
+
+      false
+
+    else
+
+      Gem.win_platform? ? (system 'cls') : (system 'clear')
+
+      true
+
+    end
+  end
+  # Validating the user name
+
+  def validate_name(name)
+    if name.scan(/\D/).empty?
+
+      false
+
+    else
+
+      true
+
+    end
   end
 
   # End of class

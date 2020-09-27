@@ -16,7 +16,7 @@ def welcome_screen(game, board)
   loop do
     name = gets.chomp
 
-    unless validate_name(name)
+    unless game.validate_name(name)
 
       puts "Your name cannot be an empty line or a number \n \n \n"
 
@@ -24,7 +24,7 @@ def welcome_screen(game, board)
 
     end
 
-    break if validate_name(name) == true
+    break if game.validate_name(name) == true
   end
 
   game.player1.name = name
@@ -36,7 +36,7 @@ def welcome_screen(game, board)
   loop do
     name = gets.chomp
 
-    unless validate_name(name)
+    unless game.validate_name(name)
 
       puts "Your name cannot be an empty line or a number \n \n"
 
@@ -44,7 +44,7 @@ def welcome_screen(game, board)
 
     end
 
-    break if validate_name(name) == true
+    break if game.validate_name(name) == true
   end
 
   game.player2.name = name
@@ -78,40 +78,10 @@ def recieve_turns
   gets.chomp.to_i - 1
 end
 
-# validate move
-
-def validate_move(mov, game_board)
-  if !mov.between?(0, 8) || !game_board[mov].is_a?(Integer)
-
-    false
-
-  else
-
-    Gem.win_platform? ? (system 'cls') : (system 'clear')
-
-    true
-
-  end
-end
-
 # invalid position
 
 def position_error
   puts 'please enter valid position'
-end
-
-# Validating the user name
-
-def validate_name(name)
-  if name.scan(/\D/).empty?
-
-    false
-
-  else
-
-    true
-
-  end
 end
 
 # Annouce winner
