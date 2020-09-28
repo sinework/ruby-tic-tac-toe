@@ -3,10 +3,11 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 game = Game.new
+player_obj= player.new
 
 board = game.game_arr
 
-def welcome_screen(game, board)
+def welcome_screen(game, board, player_obj)
   name = ''
 
   puts 'Welcome to TIC-TAC-TOE'
@@ -16,7 +17,7 @@ def welcome_screen(game, board)
   loop do
     name = gets.chomp
 
-    unless game.validate_name(name)
+    unless player_obj.validate_name(name)
 
       puts "Your name cannot be an empty line or a number \n \n \n"
 
@@ -24,7 +25,7 @@ def welcome_screen(game, board)
 
     end
 
-    break if game.validate_name(name) == true
+    break if player_obj.validate_name(name) == true
   end
 
   game.player1.name = name
@@ -36,7 +37,7 @@ def welcome_screen(game, board)
   loop do
     name = gets.chomp
 
-    unless game.validate_name(name)
+    unless player_obj.validate_name(name)
 
       puts "Your name cannot be an empty line or a number \n \n"
 
@@ -44,7 +45,7 @@ def welcome_screen(game, board)
 
     end
 
-    break if game.validate_name(name) == true
+    break if player_obj.validate_name(name) == true
   end
 
   game.player2.name = name
@@ -97,7 +98,79 @@ def draw
 
   puts 'It is a draw!'
 end
+# Start game method is moved here
 
-welcome_screen(game, board)
+def start_game(game,board)
+  i = 0
 
-game.start_game
+  player_counter = 0
+
+  win = false
+
+  while i < 9 && win == false
+
+    valid_pos = false
+
+    input_req = player_counter.even? ? game.player1.name : game.player2.name
+
+    ask_input(input_req)
+
+    until valid_pos == true
+
+      user_in = recieve_turns
+
+      if game.validate_move(user_in, board)
+
+        if player_counter.even?
+
+          game.player1.choice_array.push(user_in + 1)
+
+          board[user_in] = game.player1.key
+
+          if game.check_win?( game.player1.choice_array)
+
+            announce_winner(game.player1.name)
+
+            win = true
+
+          end
+
+        else
+
+          game.player2.choice_array.push(user_in + 1)
+
+          board[user_in] = game.player2.key
+
+          if game.check_win?( game.player2.choice_array)
+
+            announce_winner(game.player2.name)
+
+            win = true
+
+          end
+
+        end
+
+        valid_pos = true
+
+      else
+
+        position_error
+
+      end
+
+    end
+
+    display_board(game.game_arr)
+
+    i += 1
+
+    player_counter += 1
+
+  end
+  draw unless win == true
+end
+
+welcome_screen(game, board, player_obj)
+
+start_game(game, board)
