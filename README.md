@@ -20,6 +20,26 @@ Xs and Os is a paper-and-pencil game for two players, X, O:
 the following example game is won by the first player, X:
 ![example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/1280px-Tic-tac-toe-game-1.svg.png)
 
+## Instructions
+
+**Run `bundle` within this lab's directory before getting started.**
+
+### Project Structure
+
+```bash 
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── bin
+│   └── main.rb
+├── lib
+│   └── player.rb
+└── spec
+    ├── 01_tic_tac_toe_spec.rb
+    ├── 02_play_spec.rb
+    ├── 03_cli_spec.rb
+    └── spec_helper.rb
+
 
 # Authors
 
