@@ -1,4 +1,4 @@
-# rubocop : disable  Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Layout/FirstArrayElementIndentation,  Style/StringLiterals, Style/MutableConstant, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : disable    Lint/InterpolationCheck, Lint/UnusedBlockArgument, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
 class TicTacToe
   attr_accessor :board, :name
 
@@ -37,7 +37,7 @@ class TicTacToe
     input.to_i - 1
   end
 
-  def move(position, token ='X')
+  def move(position, token = 'X')
     @board[position] = token
   end
 
@@ -132,4 +132,4 @@ class TicTacToe
   end
 end
 
-# rubocop : enable  Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Layout/FirstArrayElementIndentation,  Style/StringLiterals, Style/MutableConstant, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : enable    Lint/InterpolationCheck, Lint/UnusedBlockArgument, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison,  Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
