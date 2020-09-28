@@ -1,4 +1,4 @@
-# rubocop : disable    Lint/InterpolationCheck, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : disable Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
 class TicTacToe
   attr_accessor :board, :name
 
@@ -132,4 +132,4 @@ class TicTacToe
   end
 end
 
-# rubocop : enable    Lint/InterpolationCheck, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison,  Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : enable Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison,  Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
