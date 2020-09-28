@@ -10,14 +10,6 @@ class Player
   # Validating the user name
 
   def validate_name(name)
-    if name.scan(/\D/).empty?
-
-      false
-
-    else
-
-      true
-
-    end
+    !name.scan(/\D/).empty?
   end
 end

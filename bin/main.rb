@@ -38,7 +38,7 @@ def welcome_screen(game, _board)
 
     unless game.name_check(name) && !game.compare_names(game.player1.name, name)
 
-      puts "Your name cannot be an empty line or a number \n \n"
+      puts "Your name cannot be an empty line, the same name as player one or a number \n \n"
 
       puts "Please enter a valid name \n"
 
