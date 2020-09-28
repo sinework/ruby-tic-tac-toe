@@ -1,5 +1,4 @@
 class Player
-  # This methods need to be accessed from the game class so both the writer and reader variables are needed
   attr_accessor :name, :key, :choice_array
 
   def initialize(name, key)
@@ -7,4 +6,21 @@ class Player
     @key = key
     @choice_array = []
   end
+
+   # Validating the user name
+
+   def validate_name(name)
+    if name.scan(/\D/).empty?
+
+      false
+
+    else
+
+      true
+
+    end
+  end
+
+  
+ 
 end
