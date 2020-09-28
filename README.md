@@ -4,7 +4,7 @@
 
 *![image](./tic-tac.gif)
 
-* This project has four milestones
+# This project has four milestones
 - Project setup
 - User interface
 - Game logic
@@ -14,8 +14,8 @@
 # Game Rule:
 Tic Tac Toe is Cool Math Games:
 Xs and Os is a paper-and-pencil game for two players, X, O:
-* Players take turns making the speces in 3X3 grid.
-* The player who succeeds in placing three of their marks in the horizontal, verctical, or diagnal wor wins the game.
+* Players take turns filing the spaces in 3X3 grid.
+* The player who succeeds in placing three of their marks in the horizontal, vertical, or diagonal or wins the game.
 
 the following example game is won by the first player, X:
 ![example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/1280px-Tic-tac-toe-game-1.svg.png)
@@ -42,7 +42,25 @@ the following example game is won by the first player, X:
 ```
 
 ## Authors:
+👤 Amine
+
 * [dasileker](https://github.com/dasilekr)
 * [linkedin-dasileker](https://linkedin.com/dasileker)
 
+👤 Sinework
 
+- Github: [@sinework](https://github.com/sinework)
+
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sinework-amare-731a6a125/)
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- GitHub
+- Theodinproject.com
