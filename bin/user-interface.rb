@@ -1,3 +1,7 @@
+#!/usr/bin/env ruby
+require 'pry'
+require_relative '../lib/player.rb'
+
 class TicTacToe
   attr_accessor :board
 
@@ -23,6 +27,13 @@ class TicTacToe
     puts " ----------- "
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
+  def welcome
+    puts `clear`
+    puts 'Welcome to Tic Tac Toe'
+    puts ' '
+  end
+
 
   def input_to_index(input)
     input.to_i - 1
