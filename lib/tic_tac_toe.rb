@@ -16,7 +16,7 @@ class TicTacToe
     [2, 5, 8],
     [6, 4, 2],
     [0, 4, 8]
-  ].freez
+  ].freeze
 
   def welcome
     puts `clear`
