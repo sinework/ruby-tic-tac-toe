@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 # rubocop : disable  Style/MultipleComparison, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition
 
 require 'pry'
@@ -121,4 +119,4 @@ class TicTacToe
   end
 end
 
-# rubocop : enable  Style/MultipleComparison, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition
+# rubocop : enable Style/MultipleComparison, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition

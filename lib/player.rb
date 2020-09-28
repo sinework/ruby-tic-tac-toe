@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'pry'
 require_relative '../bin/main.rb'
 
