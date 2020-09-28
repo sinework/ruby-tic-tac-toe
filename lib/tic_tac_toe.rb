@@ -1,22 +1,22 @@
-# rubocop : disable  Style/MultipleComparison, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition
+# rubocop : disable  Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Layout/FirstArrayElementIndentation,  Style/StringLiterals, Style/MutableConstant, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
 class TicTacToe
   attr_accessor :board, :name
 
   def initialize
-    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     @name = []
   end
 
   WIN_COMBINATIONS = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [6, 4, 2],
-  [0, 4, 8]
-]
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [6, 4, 2],
+    [0, 4, 8]
+  ].freez
 
   def welcome
     puts `clear`
@@ -27,9 +27,9 @@ class TicTacToe
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
-    puts " ----------- "
+    puts ' ----------- '
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
-    puts " ----------- "
+    puts ' ----------- '
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
@@ -37,12 +37,12 @@ class TicTacToe
     input.to_i - 1
   end
 
-  def move(position, token='X')
+  def move(position, token ='X')
     @board[position] = token
   end
 
   def position_taken?(input)
-    @board[input] == "X" || @board[input] == "O"
+    @board[input] == 'X' || @board[input] == 'O'
   end
 
   def valid_move?(input)
@@ -52,7 +52,7 @@ class TicTacToe
 
   def turn
     @current_player = @current_player == @name[0] ? @name[1] : @name[0]
-    puts "Choose a spot between 1-9"
+    puts 'Choose a spot between 1-9'
     spot = gets.strip
     spot = input_to_index(spot)
     if valid_move?(spot)
@@ -66,7 +66,7 @@ class TicTacToe
   def turn_count
     taken = 0
     @board.each do |i|
-      if i == "X" || i == "O"
+      if i == 'X' || i == 'O'
         taken += 1
       end
     end
@@ -74,10 +74,10 @@ class TicTacToe
   end
 
   def user_name
-      2.times do |i|
-        puts "Please enter name of player #{i + 1}:"
-        @name << gets.strip
-      end
+    2.times do |i|
+      puts 'Please enter name of player #{i + 1}:'
+      @name << gets.strip
+    end
   end
 
   def current_player
@@ -125,11 +125,11 @@ class TicTacToe
 
     if won?
       winner = winner()
-      puts "Congratulations #{winner}!"
+      puts 'Congratulations #{winner}!'
     elsif draw?
-      puts "game end in a draw"
+      puts 'game end in a draw'
     end
   end
 end
 
-# rubocop : enable  Style/MultipleComparison, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition
+# rubocop : enable  Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Layout/FirstArrayElementIndentation,  Style/StringLiterals, Style/MutableConstant, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
