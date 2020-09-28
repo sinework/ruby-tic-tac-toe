@@ -31,9 +31,9 @@ the following example game is won by the first player, X:
 ├── Gemfile.lock
 ├── README.md
 ├── bin
-│   └── tictactoe
+│   └── main.rb
 ├── lib
-│   └── tic_tac_toe.rb
+│   └── player.rb
 └── spec
     ├── 01_tic_tac_toe_spec.rb
     ├── 02_play_spec.rb
