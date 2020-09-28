@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'pry'
-require_relative '../bin/user-interface.rb'
+require_relative '../bin/main.rb'
+
 board = TicTacToe.new
 board.welcome
 board.display_board

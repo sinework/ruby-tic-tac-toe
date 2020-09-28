@@ -10,15 +10,15 @@ class TicTacToe
   end
 
   WIN_COMBINATIONS = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [6, 4, 2],
-  [0, 4, 8]
-]
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [6, 4, 2],
+    [0, 4, 8],
+  ]
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -30,16 +30,15 @@ class TicTacToe
 
   def welcome
     puts `clear`
-    puts 'Welcome to Tic Tac Toe'
-    puts ' '
+    puts "Welcome to Tic Tac Toe"
+    puts " "
   end
-
 
   def input_to_index(input)
     input.to_i - 1
   end
 
-  def move(position, token='X')
+  def move(position, token = "X")
     @board[position] = token
   end
 
@@ -50,7 +49,6 @@ class TicTacToe
   def valid_move?(input)
     input.between?(0, 8) && !position_taken?(input)
   end
-
 
   def turn
     puts "Choose a spot between 1-9"
@@ -77,13 +75,12 @@ class TicTacToe
   def current_player
     player = nil
     if turn_count() % 2 == 0
-      player = 'X'
+      player = "X"
     else
-      player = 'O'
+      player = "O"
     end
     return player
   end
-
 
   def won?
     WIN_COMBINATIONS.detect do |combo|
