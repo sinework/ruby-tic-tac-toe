@@ -1,2 +1,4 @@
-# ruby-tic-tac-toe
-This is the ruby implementation of the game tic tac toe
+# ruby-tic-tac-toe (Object Oriented Programming)
+* Original project specification at [The Odin Project] (https://www.theodinproject/lesseons/oop)
+
+
