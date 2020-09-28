@@ -25,8 +25,6 @@ the following example game is won by the first player, X:
 
 @dasileker [github](dasileker/github.com)
 
-@dasileker [twitter](Zerradi/twitter.com)
-
 @dasileker [linkedin](dasileker/linkedin.com)
 
 
