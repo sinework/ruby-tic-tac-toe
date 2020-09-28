@@ -7,9 +7,9 @@ class Player
     @choice_array = []
   end
 
-   # Validating the user name
+  # Validating the user name
 
-   def validate_name(name)
+  def validate_name(name)
     if name.scan(/\D/).empty?
 
       false
@@ -20,7 +20,4 @@ class Player
 
     end
   end
-
-  
- 
 end

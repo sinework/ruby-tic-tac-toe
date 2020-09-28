@@ -3,11 +3,10 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 game = Game.new
-player_obj= player.new
 
 board = game.game_arr
 
-def welcome_screen(game, board, player_obj)
+def welcome_screen(game, board)
   name = ''
 
   puts 'Welcome to TIC-TAC-TOE'
@@ -17,7 +16,7 @@ def welcome_screen(game, board, player_obj)
   loop do
     name = gets.chomp
 
-    unless player_obj.validate_name(name)
+    unless game.name_check(name)
 
       puts "Your name cannot be an empty line or a number \n \n \n"
 
@@ -25,7 +24,7 @@ def welcome_screen(game, board, player_obj)
 
     end
 
-    break if player_obj.validate_name(name) == true
+    break if game.name_check(name) == true
   end
 
   game.player1.name = name
@@ -37,7 +36,7 @@ def welcome_screen(game, board, player_obj)
   loop do
     name = gets.chomp
 
-    unless player_obj.validate_name(name)
+    unless game.name_check(name)
 
       puts "Your name cannot be an empty line or a number \n \n"
 
@@ -45,7 +44,7 @@ def welcome_screen(game, board, player_obj)
 
     end
 
-    break if player_obj.validate_name(name) == true
+    break if game.name_check(name) == true
   end
 
   game.player2.name = name
@@ -100,7 +99,7 @@ def draw
 end
 # Start game method is moved here
 
-def start_game(game,board)
+def start_game(game, board)
   i = 0
 
   player_counter = 0
@@ -127,7 +126,7 @@ def start_game(game,board)
 
           board[user_in] = game.player1.key
 
-          if game.check_win?( game.player1.choice_array)
+          if game.check_win?(game.player1.choice_array)
 
             announce_winner(game.player1.name)
 
@@ -141,7 +140,7 @@ def start_game(game,board)
 
           board[user_in] = game.player2.key
 
-          if game.check_win?( game.player2.choice_array)
+          if game.check_win?(game.player2.choice_array)
 
             announce_winner(game.player2.name)
 
@@ -171,6 +170,6 @@ def start_game(game,board)
   draw unless win == true
 end
 
-welcome_screen(game, board, player_obj)
+welcome_screen(game, board)
 
 start_game(game, board)

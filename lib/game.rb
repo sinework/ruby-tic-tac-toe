@@ -22,7 +22,7 @@ class Game
     @game_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-#  Start game method was here
+  #  Start game method was here
 
   # Check if its a winning move
 
@@ -49,5 +49,9 @@ class Game
     end
   end
 
+  # return name check
+  def name_check(name)
+    @player1.validate_name(name)
+  end
   # End of class
 end
