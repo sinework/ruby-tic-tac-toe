@@ -6,7 +6,7 @@ game = Game.new
 
 board = game.game_arr
 
-def welcome_screen(game, board)
+def welcome_screen(game, _board)
   name = ''
 
   puts 'Welcome to TIC-TAC-TOE'
@@ -51,21 +51,7 @@ def welcome_screen(game, board)
 
   puts "Hi #{game.player2.name} , your key is #{game.player2.key} "
 
-  display_board(board)
-end
-
-# displaying the game board
-
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-
-  puts '-----------'
-
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-
-  puts '-----------'
-
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  puts game.display_board(game.game_arr)
 end
 
 # Ask for input
@@ -160,8 +146,8 @@ def start_game(game, board)
 
     end
 
-    display_board(game.game_arr)
-
+    # display_board(game.game_arr)
+    puts game.display_board(game.game_arr)
     i += 1
 
     player_counter += 1

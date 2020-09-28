@@ -53,5 +53,14 @@ class Game
   def name_check(name)
     @player1.validate_name(name)
   end
+
+  # display board
+  def display_board(game_bd)
+    " #{game_bd[0]} | #{game_bd[1]} | #{game_bd[2]} \n" \
+      "----------- \n" \
+      " #{game_bd[3]} | #{game_bd[4]} | #{game_bd[5]} \n" \
+      "----------- \n" \
+      " #{game_bd[6]} | #{game_bd[7]} | #{game_bd[8]} \n"
+  end
   # End of class
 end
