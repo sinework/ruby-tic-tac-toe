@@ -16,7 +16,7 @@ class TicTacToe
     [2, 5, 8],
     [6, 4, 2],
     [0, 4, 8]
-  ].freeze
+  ]
 
   def welcome
     puts `clear`
@@ -75,7 +75,7 @@ class TicTacToe
 
   def user_name
     2.times do |i|
-      puts 'Please enter name of player #{i + 1}:'
+      puts "Please enter name of player #{i + 1}:"
       @name << gets.strip
     end
   end
