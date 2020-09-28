@@ -31,20 +31,18 @@ the following example game is won by the first player, X:
 ├── Gemfile.lock
 ├── README.md
 ├── bin
-│   └── main.rb
+│   └── tictactoe
 ├── lib
-│   └── player.rb
+│   └── tic_tac_toe.rb
 └── spec
     ├── 01_tic_tac_toe_spec.rb
     ├── 02_play_spec.rb
     ├── 03_cli_spec.rb
     └── spec_helper.rb
+```
 
-
-# Authors
-
-* @dasileker [github](dasileker/github.com)
-
-* [dasileker](https://github.com/dasileker)
+## Authors:
+* [dasileker](https://github.com/dasilekr)
+* [linkedin-dasileker](https://linkedin.com/dasileker)
 
 
