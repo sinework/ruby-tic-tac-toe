@@ -43,8 +43,8 @@ the following example game is won by the first player, X:
 
 # Authors
 
-@dasileker [github](dasileker/github.com)
+* @dasileker [github](dasileker/github.com)
 
-@dasileker [linkedin](dasileker/linkedin.com)
+* [dasileker](https://github.com/dasileker)
 
 
