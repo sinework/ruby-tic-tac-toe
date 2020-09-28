@@ -49,9 +49,16 @@ class Game
     end
   end
 
+  # compareName
+  def compare_names(name1, name2)
+    name1.eql?(name2)
+  end
+
   # return name check
   def name_check(name)
-    @player1.validate_name(name)
+    naem = []
+    naem.push(name)
+    return true if @player1.validate_name(name)
   end
 
   # display board

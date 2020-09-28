@@ -36,7 +36,7 @@ def welcome_screen(game, _board)
   loop do
     name = gets.chomp
 
-    unless game.name_check(name)
+    unless game.name_check(name) && !game.compare_names(game.player1.name, name)
 
       puts "Your name cannot be an empty line or a number \n \n"
 
@@ -44,7 +44,7 @@ def welcome_screen(game, _board)
 
     end
 
-    break if game.name_check(name) == true
+    break if game.name_check(name) == true && !game.compare_names(game.player1.name, name)
   end
 
   game.player2.name = name
