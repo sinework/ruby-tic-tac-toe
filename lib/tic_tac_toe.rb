@@ -1,4 +1,4 @@
-# rubocop : disable    Lint/InterpolationCheck, Lint/UnusedBlockArgument, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : disable    Lint/InterpolationCheck, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison, Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
 class TicTacToe
   attr_accessor :board, :name
 
@@ -16,7 +16,7 @@ class TicTacToe
     [2, 5, 8],
     [6, 4, 2],
     [0, 4, 8]
-  ]
+  ].freeze
 
   def welcome
     puts `clear`
@@ -125,11 +125,11 @@ class TicTacToe
 
     if won?
       winner = winner()
-      puts 'Congratulations #{winner}!'
+      puts "Congratulations #{winner}!"
     elsif draw?
       puts 'game end in a draw'
     end
   end
 end
 
-# rubocop : enable    Lint/InterpolationCheck, Lint/UnusedBlockArgument, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison,  Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
+# rubocop : enable    Lint/InterpolationCheck, Style/IfUnlessModifier, Style/WhileUntilModifier, Layout/MultilineOperationIndentation, Layout/EmptyLineBetweenDefs, Style/RedundantReturn, Style/MultipleComparison,  Style/StringLiterals, Lint/UselessAssignment, Style/GuardClause, Lint/AssignmentInCondition, Layout/EmptyLines, Style/ConditionalAssignment, Style/EvenOdd, Style/NumericPredicate, Style/MethodCallWithoutArgsParentheses
