@@ -1,9 +1,8 @@
 class TicTacToe
-  attr_accessor :board, :name
+  attr_accessor :board
 
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    @name = []
   end
 
   WIN_COMBINATIONS = [
@@ -16,12 +15,6 @@ class TicTacToe
   [6, 4, 2],
   [0, 4, 8]
 ]
-
-  def welcome
-    puts `clear`
-    puts 'Welcome to Tic Tac Toe'
-    puts ' '
-  end
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -49,9 +42,8 @@ class TicTacToe
 
 
   def turn
-    @current_player = @current_player == @name[0] ? @name[1] : @name[0]
-    puts "#{@current_player}, Choose a spot between 1-9"
-    spot = gets.strip.to_i
+    puts "Choose a spot between 1-9"
+    spot = gets.strip
     spot = input_to_index(spot)
     if valid_move?(spot)
       move(spot, current_player)
@@ -69,13 +61,6 @@ class TicTacToe
       end
     end
     return taken
-  end
-
-  def user_name
-      2.times do |i|
-        puts "Please enter name of player #{i + 1}:"
-        @name << gets.strip
-      end
   end
 
   def current_player
@@ -120,9 +105,10 @@ class TicTacToe
     until over?
       turn
     end
+
     if won?
-      winner = name()
-      puts "Congratulations #{name}!"
+      winner = winner()
+      puts "Congratulations #{winner}!"
     elsif draw?
       puts "Cat\'s Game!"
     end
