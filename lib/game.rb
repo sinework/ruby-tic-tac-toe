@@ -22,82 +22,13 @@ class Game
     @game_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-  def start_game
-    i = 0
-
-    player_counter = 0
-
-    win = false
-
-    while i < 9 && win == false
-
-      valid_pos = false
-
-      input_req = player_counter.even? ? @player1.name : @player2.name
-
-      ask_input(input_req)
-
-      until valid_pos == true
-
-        user_in = recieve_turns
-
-        if validate_move(user_in, @game_arr)
-
-          if player_counter.even?
-
-            @player1.choice_array.push(user_in + 1)
-
-            @game_arr[user_in] = @player1.key
-
-            if check_win?(WINNING_SET, @player1.choice_array)
-
-              announce_winner(@player1.name)
-
-              win = true
-
-            end
-
-          else
-
-            @player2.choice_array.push(user_in + 1)
-
-            @game_arr[user_in] = @player2.key
-
-            if check_win?(WINNING_SET, @player2.choice_array)
-
-              announce_winner(@player2.name)
-
-              win = true
-
-            end
-
-          end
-
-          valid_pos = true
-
-        else
-
-          position_error
-
-        end
-
-      end
-
-      display_board(@game_arr)
-
-      i += 1
-
-      player_counter += 1
-
-    end
-    draw unless win == true
-  end
+#  Start game method was here
 
   # Check if its a winning move
 
-  def check_win?(win_set, player_arr)
-    win_set.length.times do |item|
-      return true if win_set[item].all? { |x| player_arr.include?(x) }
+  def check_win?(player_arr)
+    WINNING_SET.length.times do |item|
+      return true if WINNING_SET[item].all? { |x| player_arr.include?(x) }
     end
 
     false
@@ -112,19 +43,6 @@ class Game
     else
 
       Gem.win_platform? ? (system 'cls') : (system 'clear')
-
-      true
-
-    end
-  end
-  # Validating the user name
-
-  def validate_name(name)
-    if name.scan(/\D/).empty?
-
-      false
-
-    else
 
       true
 
