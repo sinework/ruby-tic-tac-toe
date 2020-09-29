@@ -1,4 +1,4 @@
-#  Tic Tac Toe OOPpo (Object Oriented Programming)
+#  Tic Tac Toe OOP build with Ruby (Object Oriented Programming)
 * Original project specification at [The Odin Project] (https://www.theodinproject/lesseons/oop)
 * The purpose of the project is to master object oriented programming with ruby. 
 
@@ -40,6 +40,16 @@ the following example game is won by the first player, X:
     ├── 03_cli_spec.rb
     └── spec_helper.rb
 ```
+
+## How to Run the Game
+
+- clone the repository from her : (https://github.com/sinework/ruby-tic-tac-toe.git)
+
+- Open your git bash and clone the repo.
+
+- go to the diroctory of the file and run ruby "main.rb" or "main"
+
+- Good job you are now playing Tic-Tac-Toe game. 👌🙌
 
 ## Authors:
 👤 Amine
