@@ -10,11 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
         with:
-<<<<<<< HEAD
           ruby-version: 2.6.x
-=======
           ruby-version: 2.7.x
->>>>>>> baad63e1c01e64ac556576a2ff878441365324d8
       - name: Setup RSpec
         run: |
           [ -f Gemfile ] && bundle --deployment
