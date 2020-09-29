@@ -43,7 +43,7 @@ the following example game is won by the first player, X:
 
 ## How to Run the Game
 
-- clone the repository from her : (https://github.com/sinework/ruby-tic-tac-toe.git)
+- clone the repository from here : (https://github.com/sinework/ruby-tic-tac-toe.git)
 
 - Open your git bash and clone the repo.
 
@@ -51,7 +51,14 @@ the following example game is won by the first player, X:
 
 - Good job you are now playing Tic-Tac-Toe game. 👌🙌
 
-
+## How to play the game
+- Player one enters the name (Names should not be the same and not a number)
+- Player two does the same.
+- Choose a position from 1-9 from the game board. (Already taken positions cannot be selected.)
+- The player who filled first the consecutive row, column or diagonal will be a winner.
+- If all the positions are filled equally, the game will be declared a draw.
+- To cancel the game in the middle of it, hit CTRL + C on the keyboard. 
+  
 ## Authors:
 👤 Amine
 
