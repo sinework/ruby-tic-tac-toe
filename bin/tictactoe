@@ -1,6 +1,0 @@
-require 'pry'
-require_relative '../lib/tic_tac_toe'
-game = TicTacToe.new
-game.welcome
-game.user_name
-game.play
