@@ -1,6 +1,6 @@
-require_relative '../lib/tic-tac-toe'
+require_relative '../lib/tic_tac_toe'
 
-describe './lib/tic-tac-toe.rb' do
+describe '../lib/tic_tac_toe.rb' do
   describe TicTacToe do
     describe '#initialize' do
       it 'assigns an instance variable @board to an array with 9 blank spaces " "' do
@@ -9,52 +9,10 @@ describe './lib/tic-tac-toe.rb' do
       end
     end
 
-    describe 'WIN_COMBINATIONS' do
-      it 'defines a constant WIN_COMBINATIONS with arrays for each win combination' do
-        expect(TicTacToe::WIN_COMBINATIONS.size).to eq(8)
-
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([0, 1, 2])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([3, 4, 5])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([6, 7, 8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([0, 3, 6])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([1, 4, 7])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([2, 5, 8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([0, 4, 8])
-        expect(TicTacToe::WIN_COMBINATIONS).to include_array([6, 4, 2])
-      end
-    end
-
-    describe '#display_board' do
-      it 'prints arbitrary arrangements of the board' do
-        board = %w[X X X X O O X O O]
-        game = TicTacToe.new
-        game.instance_variable_set(:@board, board)
-
-        output = capture_puts { game.display_board }
-
-        expect(output).to include(' X | X | X ')
-        expect(output).to include('-----------')
-        expect(output).to include(' X | O | O ')
-        expect(output).to include('-----------')
-        expect(output).to include(' X | O | O ')
-
-        board = %w[X O X O X X O X O]
-        game.instance_variable_set(:@board, board)
-
-        output = capture_puts { game.display_board }
-
-        expect(output).to include(' X | O | X ')
-        expect(output).to include('-----------')
-        expect(output).to include(' O | X | X ')
-        expect(output).to include('-----------')
-        expect(output).to include(' O | X | O ')
-      end
-    end
-
     describe '#input_to_index' do
       it "accepts the user's input (a string) as an argument" do
         game = TicTacToe.new
-        expect {game.input_to_index}.to raise_error(ArgumentError)
+        expect { game.input_to_index }.to raise_error(ArgumentError)
       end
 
       it "converts the user's input (a string) into an integer" do

@@ -1,3 +1,5 @@
+# rubocop : disable Style/GuardClause, Lint/UselessAssignment, Style/MultipleComparison, Lint/AssignmentInCondition
+
 class TicTacToe
   attr_accessor :board
 
@@ -107,3 +109,5 @@ class TicTacToe
     end
   end
 end
+
+# rubocop : enable Style/GuardClause, Lint/UselessAssignment, Style/MultipleComparison, Lint/AssignmentInCondition

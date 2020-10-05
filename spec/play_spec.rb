@@ -1,6 +1,5 @@
-require_relative '../lib/tic-tac-toe'
-
-describe './lib/tic-tac-toe.rb' do
+require_relative '../lib/tic_tac_toe'
+describe '../lib/tic_tac_toe.rb' do
   describe TicTacToe do
     describe '#play' do
       it 'asks for players input on a turn of the game' do
@@ -47,7 +46,6 @@ describe './lib/tic-tac-toe.rb' do
         board_after_three_turns = game.instance_variable_get(:@board)
         expect(board_after_three_turns).to match_array(['X', 'O', 'X', ' ', ' ', ' ', ' ', ' ', ' '])
       end
-      play_spec
       it 'checks if the game is won after every turn' do
         game = TicTacToe.new
         allow($stdout).to receive(:puts)

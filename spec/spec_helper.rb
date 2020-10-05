@@ -17,7 +17,6 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
-  config.order = :default
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
@@ -96,33 +95,4 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
-end
-RSpec::Matchers.define :include_array do |expected|
-  match do |actual|
-    actual.any? { |array| match_array(expected).matches?(array) }
-  end
-end
-
-def run_file(file)
-  eval(File.read(file), binding)
-end
-
-def get_variable_from_file(file, variable)
-  file_scope = binding
-  file_scope.eval(File.read(file))
-
-  begin
-    file_scope.local_variable_get(variable)
-  rescue NameError
-    raise NameError, "local variable `#{variable}' not defined in #{file}."
-  end
-end
-
-def capture_puts
-  old_stdout = $stdout
-  $stdout = StringIO.new('', 'w')
-  yield
-  $stdout.string
-ensure
-  $stdout = old_stdout
 end
