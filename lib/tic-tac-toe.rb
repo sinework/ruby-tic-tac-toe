@@ -2,25 +2,25 @@ class TicTacToe
   attr_accessor :board
 
   def initialize
-    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   end
 
   WIN_COMBINATIONS = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [6, 4, 2],
-  [0, 4, 8]
-]
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [6, 4, 2],
+    [0, 4, 8]
+  ].freeze
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
-    puts " ----------- "
+    puts ' ----------- '
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
-    puts " ----------- "
+    puts ' ----------- '
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
@@ -28,21 +28,20 @@ class TicTacToe
     input.to_i - 1
   end
 
-  def move(position, token='X')
+  def move(position, token = 'X')
     @board[position] = token
   end
 
   def position_taken?(input)
-    @board[input] == "X" || @board[input] == "O"
+    @board[input] == 'X' || @board[input] == 'O'
   end
 
   def valid_move?(input)
     input.between?(0, 8) && !position_taken?(input)
   end
 
-
   def turn
-    puts "Choose a spot between 1-9"
+    puts 'Choose a spot between 1-9'
     spot = gets.strip
     spot = input_to_index(spot)
     if valid_move?(spot)
@@ -56,29 +55,25 @@ class TicTacToe
   def turn_count
     taken = 0
     @board.each do |i|
-      if i == "X" || i == "O"
-        taken += 1
-      end
+      taken += 1 if i == 'X' || i == 'O'
     end
-    return taken
+    taken
   end
 
   def current_player
     player = nil
-    if turn_count() % 2 == 0
-      player = 'X'
+    if turn_count.even?
+      'X'
     else
-      player = 'O'
+      'O'
     end
-    return player
   end
-
 
   def won?
     WIN_COMBINATIONS.detect do |combo|
       @board[combo[0]] == @board[combo[1]] &&
-      @board[combo[1]] == @board[combo[2]] &&
-      position_taken?(combo[0])
+        @board[combo[1]] == @board[combo[2]] &&
+        position_taken?(combo[0])
     end
   end
 
@@ -95,16 +90,14 @@ class TicTacToe
   end
 
   def winner
-    won = ""
+    won = ''
     if winner = won?
       won = @board[winner.first]
     end
   end
 
   def play
-    until over?
-      turn
-    end
+    turn until over?
 
     if won?
       winner = winner()
